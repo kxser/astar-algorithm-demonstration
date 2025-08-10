@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pathfinding Visualizer</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gray-900 min-h-screen p-4">
+  <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 mb-4">
+    <div id="simulation-group" class="flex bg-blue-700 rounded-lg p-1 justify-center">
+      <button id="start-simulation" class="bg-blue-900 text-white py-2 px-4 rounded-lg text-sm sm:text-base">Start Simulation</button>
+    </div>
+    <div id="draw-mode-group" class="flex bg-gray-700 rounded-lg p-1 justify-center">
+      <button id="draw-obstacles" class="bg-gray-900 text-white py-2 px-3 sm:px-4 rounded-lg text-sm sm:text-base">Obstacles</button>
+      <button id="draw-start" class="text-white py-2 px-3 sm:px-4 rounded-lg text-sm sm:text-base">Start</button>
+      <button id="draw-goal" class="text-white py-2 px-3 sm:px-4 rounded-lg text-sm sm:text-base">Goal</button>
+    </div>
+    <div id="action-mode-group" class="flex bg-gray-700 rounded-lg p-1 justify-center">
+      <button id="action-draw" class="bg-gray-900 text-white py-2 px-3 sm:px-4 rounded-lg text-sm sm:text-base">Draw</button>
+      <button id="action-erase" class="text-white py-2 px-3 sm:px-4 rounded-lg text-sm sm:text-base">Erase</button>
+    </div>
+    <div id="delay-group" class="flex bg-gray-700 rounded-lg p-1 justify-center">
+      <button id="toggle-delay" class="bg-gray-900 text-white py-2 px-3 sm:px-4 rounded-lg text-sm sm:text-base">Delay: On</button>
+    </div>
+    <div class="bg-gray-700 rounded-lg p-3 text-white text-xs sm:text-sm">
+      <p class="mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <p class="hidden sm:block">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+  </div>
+
+  <div id="canvas-container" class="shadow-lg bg-gray-900"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.6.0/lib/p5.min.js"></script>
+  <script src="js/sketch.js"></script>
+
+  <script>
+
+  </script>
+</body>
+</html>
