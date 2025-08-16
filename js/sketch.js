@@ -453,13 +453,54 @@ function setup() {
   goalCell = grid[Math.floor(rows * 0.9)][Math.floor(cols * 0.9)];
 
   // Button listeners
-  document.getElementById('start-simulation').addEventListener('click', () => startSimulation());
-  document.getElementById('draw-obstacles').addEventListener('click', () => setDrawMode('obstacle'));
-  document.getElementById('draw-start').addEventListener('click', () => setDrawMode('start'));
-  document.getElementById('draw-goal').addEventListener('click', () => setDrawMode('goal'));
-  document.getElementById('action-draw').addEventListener('click', () => setActionMode('draw'));
-  document.getElementById('action-erase').addEventListener('click', () => setActionMode('erase'));
-  document.getElementById('toggle-delay').addEventListener('click', () => toggleDelay());
+  document.getElementById('start-simulation').addEventListener('click', (e) => {
+    e.preventDefault();
+    startSimulation();
+  }, { passive: false });
+
+  document.getElementById('draw-obstacles').addEventListener('click', (e) => {
+    e.preventDefault();
+    setDrawMode('obstacle');
+  }, { passive: false });
+
+  document.getElementById('draw-start').addEventListener('click', (e) => {
+    e.preventDefault();
+    setDrawMode('start');
+  }, { passive: false });
+
+  document.getElementById('draw-goal').addEventListener('click', (e) => {
+    e.preventDefault();
+    setDrawMode('goal');
+  }, { passive: false });
+
+  document.getElementById('action-draw').addEventListener('click', (e) => {
+    e.preventDefault();
+    setActionMode('draw');
+  }, { passive: false });
+
+  document.getElementById('action-erase').addEventListener('click', (e) => {
+    e.preventDefault();
+    setActionMode('erase');
+  }, { passive: false });
+
+  document.getElementById('toggle-delay').addEventListener('click', (e) => {
+    e.preventDefault();
+    toggleDelay();
+  }, { passive: false });
+
+  // Add touch event listeners for buttons as backup
+  const buttonIds = ['start-simulation', 'draw-obstacles', 'draw-start', 'draw-goal', 'action-draw', 'action-erase', 'toggle-delay'];
+
+  buttonIds.forEach(id => {
+    const button = document.getElementById(id);
+    if (button) {
+      button.addEventListener('touchend', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        button.click();
+      }, { passive: false });
+    }
+  });
 
   // Initialize button states
   updateDrawButtons();
